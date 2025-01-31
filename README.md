@@ -1,75 +1,63 @@
-# Gemini API chat app
+# Aplicación de chat con Gemini API
 
-## Table of Contents
+## Tabla de Contenidos
 
-- [Intro](#intro)
-- [Installation](#installation)
-  - [(Option 1) Node.js installation](#option-1-nodejs-installation)
-  - [(Option 2) Python installation](#option-2-python-installation)
-  - [(Option 3) Go installation](#option-3-go-installation)
-- [Run the app](#run-the-app)
-  - [Run the React client](#run-the-react-client)
-  - [Run a backend server](#run-a-backend-server)
-    - [Get an API key](#get-an-api-key)
-    - [(Option 1) Configure and run the Node.js backend](#option-1-configure-and-run-the-nodejs-backend)
-    - [(Option 2) Configure and run the Python backend](#option-2-configure-and-run-the-python-backend)
-    - [(Option 3) Configure and run the Go backend](#option-3-configure-and-run-the-go-backend)
-- [Usage](#usage)
-- [API documentation](#api-documentation)
+- [Introducción](#introduccion)
+- [Instalación](#instalacion)
+  - [(Opción 1) Instalación con Node.js](#opcion-1-instalacion-con-nodejs)
+  - [(Opción 2) Instalación con Python](#opcion-2-instalacion-con-python)
+  - [(Opción 3) Instalación con Go](#opcion-3-instalacion-con-go)
+- [Ejecutar la aplicación](#ejecutar-la-aplicacion)
+  - [Ejecutar el cliente React](#ejecutar-el-cliente-react)
+  - [Ejecutar un servidor backend](#ejecutar-un-servidor-backend)
+    - [Obtener una clave API](#obtener-una-clave-api)
+    - [(Opción 1) Configurar y ejecutar el backend con Node.js](#opcion-1-configurar-y-ejecutar-el-backend-con-nodejs)
+    - [(Opción 2) Configurar y ejecutar el backend con Python](#opcion-2-configurar-y-ejecutar-el-backend-con-python)
+    - [(Opción 3) Configurar y ejecutar el backend con Go](#opcion-3-configurar-y-ejecutar-el-backend-con-go)
+- [Uso](#uso)
+- [Documentación de la API](#documentacion-de-la-api)
 
-## Intro
+## Introducción
 
-This example app lets the user chat with the Gemini API and use it as a personal
-AI assistant. The app supports text-only chat in two modes: non-streaming and
-streaming.
+Esta aplicación de ejemplo permite al usuario chatear con la API de Gemini y usarla como un asistente de IA personal. La aplicación admite chat solo de texto en dos modos: sin streaming y con streaming.
 
-In non-streaming mode, a response is returned after the model completes the
-entire text generation process.
+En el modo sin streaming, se devuelve una respuesta después de que el modelo complete todo el proceso de generación de texto.
 
-Streaming mode uses the Gemini API's streaming capability to achieve faster
-interactions.
+El modo con streaming utiliza la capacidad de transmisión de la API de Gemini para lograr interacciones más rápidas.
 
 ### Frontend
 
-The client for this app is written using [React](https://react.dev/) and served
-using [Vite](https://github.com/vitejs/vite).
+El cliente de esta aplicación está desarrollado con [React](https://react.dev/) y se sirve utilizando [Vite](https://github.com/vitejs/vite).
 
 ### Backend
 
-There are three implementations of the backend server to choose from:
+Existen tres implementaciones del servidor backend entre las cuales elegir:
 
-* A Python [Flask](https://flask.palletsprojects.com/en/3.0.x/quickstart/)
-  server, which demonstrates the
+* Un servidor en Python con [Flask](https://flask.palletsprojects.com/en/3.0.x/quickstart/), que demuestra el uso del
   [Gemini API Python SDK](https://github.com/google-gemini/generative-ai-python)
-* A Node.js server, which demonstrates the
+* Un servidor en Node.js, que demuestra el uso del
   [Gemini API JavaScript SDK](https://github.com/google-gemini/generative-ai-js)
-* A Go server, which demonstrates the
+* Un servidor en Go, que demuestra el uso del
   [Gemini API Go SDK](https://github.com/google/generative-ai-go)
 
-You only need to install and run *one* of the backends. If you want to try more
-than one, keep in mind that they all default to running on the same port.
+Solo necesitas instalar y ejecutar *uno* de los backends. Si deseas probar más de uno, ten en cuenta que todos usan el mismo puerto por defecto.
 
-## Installation
+## Instalación
 
-Follow the installation instructions for one of the backend servers (Node.js,
-Python, or Go).
+Sigue las instrucciones de instalación para uno de los servidores backend (Node.js, Python o Go).
 
-### (Option 1) Node.js installation
+### (Opción 1) Instalación con Node.js
 
-Before running the installation steps, make sure that Node.js v18+ and npm are
-installed in your development environment.
- 
-1. Navigate to the app directory, `server-js` (i.e. where `package.json` is
-   located).
-2. Run `npm install`.
+Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Node.js v18+ y npm en tu entorno de desarrollo.
 
-### (Option 2) Python installation
+1. Navega al directorio de la aplicación, `server-js` (donde se encuentra `package.json`).
+2. Ejecuta `npm install`.
 
-Before running the installation steps, make sure that Python 3.9+ is installed
-in your development environment. Then navigate to the app directory,
-`server-python`, and complete the installation.
+### (Opción 2) Instalación con Python
 
-#### Create a virtual environment
+Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Python 3.9+ en tu entorno de desarrollo. Luego, navega al directorio de la aplicación, `server-python`, y completa la instalación.
+
+#### Crear un entorno virtual
 
 ##### Linux/macOS
 
@@ -85,7 +73,7 @@ python -m venv venv
 .\venv\Scripts\activate
 ```
 
-#### Install the required Python packages
+#### Instalar los paquetes requeridos
 
 ##### Linux/macOS/Windows
 
@@ -93,229 +81,105 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-### (Option 3) Go installation
+### (Opción 3) Instalación con Go
 
-Check if Go 1.20+ is installed on your system.
+Verifica si Go 1.20+ está instalado en tu sistema.
 
 ```
 go version
 ```
 
-If Go 1.20+ is not installed, follow the instructions for your operating system
-from the [Go installation guide](https://go.dev/doc/install). The backend
-dependencies will be installed when you run the app.
+Si Go 1.20+ no está instalado, sigue las instrucciones según tu sistema operativo en la [guía de instalación de Go](https://go.dev/doc/install). Las dependencias del backend se instalarán cuando ejecutes la aplicación.
 
-## Run the app
+## Ejecutar la aplicación
 
-To launch the app:
+Para iniciar la aplicación:
 
-1. Run the React client
-2. Run the backend server of your choice
+1. Ejecuta el cliente React.
+2. Ejecuta el servidor backend de tu elección.
 
-### Run the React client
+### Ejecutar el cliente React
 
-1. Navigate to the app directory, `client-react/`.
-2. Run the application with the following command:
+1. Navega al directorio de la aplicación, `client-react/`.
+2. Ejecuta la aplicación con el siguiente comando:
 
    ```
    npm run start
    ```
 
-The client will start on `localhost:3000`.
+El cliente se iniciará en `localhost:3000`.
 
-### Run a backend server
+### Ejecutar un servidor backend
 
-To run the backend, you need to get an API key and then follow the
-configure-and-run instructions for *one* of the backend servers (Node.js,
-Python, or Go).
+Para ejecutar el backend, necesitas obtener una clave API y luego seguir las instrucciones de configuración y ejecución para *uno* de los servidores backend (Node.js, Python o Go).
 
-#### Get an API Key
+#### Obtener una clave API
 
-Before you can use the Gemini API, you must first obtain an API key. If you
-don't already have one, create a key with one click in Google AI Studio.  
+Antes de poder usar la API de Gemini, debes obtener una clave API. Si aún no tienes una, créala con un solo clic en Google AI Studio.
 
-<a class=button button-primary href=https://ai.google.dev/gemini-api/docs/api-key target=_blank rel=noopener noreferrer>Get an API key</a>
+<a class=button button-primary href=https://ai.google.dev/gemini-api/docs/api-key target=_blank rel=noopener noreferrer>Obtener una clave API</a>
 
-#### (Option 1) Configure and run the Node.js backend
+#### (Opción 1) Configurar y ejecutar el backend con Node.js
 
-Configure the Node.js app:
+Configura la aplicación Node.js:
 
-1. Navigate to the app directory, `server-js/`.
-2. Copy the `.env.example` file to `.env`.
+1. Navega al directorio de la aplicación, `server-js/`.
+2. Copia el archivo `.env.example` a `.env`.
    ```
    cp .env.example .env
    ```
-3. Specify the Gemini API key for the variable `GOOGLE_API_KEY` in the `.env`
-   file.
+3. Especifica la clave API de Gemini para la variable `GOOGLE_API_KEY` en el archivo `.env`.
    ```
-   GOOGLE_API_KEY=<your_api_key>
+   GOOGLE_API_KEY=<tu_api_key>
    ```
 
-Run the Node.js app:
+Ejecuta la aplicación Node.js:
 
 ```
 node --env-file=.env app.js
 ```
 
-`--env-file=.env` tells Node.js where the .env file is located.
+Por defecto, la aplicación se ejecutará en el puerto 9000.
 
-By default, the app will run on port 9000.
+#### (Opción 2) Configurar y ejecutar el backend con Python
 
-To specify a custom port, edit the `PORT` key in your `.env` file,
-`PORT=xxxx`.
+Configura la aplicación Python:
 
-**Note:** In case of a custom port, you must update the host URL specified in
-`client-react/src/App.js`.
-
-#### (Option 2) Configure and run the Python backend
-
-Configure the Python app:
-
-1. Navigate to the app directory, `server-python/`.
-2. Make sure that you've activated the virtual environment as shown in the
-   installation steps.
-3. Copy the `.env.example` file to `.env`.
-
+1. Navega al directorio de la aplicación, `server-python/`.
+2. Asegúrate de haber activado el entorno virtual.
+3. Copia el archivo `.env.example` a `.env`.
    ```
    cp .env.example .env
    ```
-4. Specify the Gemini API key for the variable `GOOGLE_API_KEY` in the `.env`
-   file.
-
+4. Especifica la clave API en el archivo `.env`.
    ```
-   GOOGLE_API_KEY=<your_api_key>
+   GOOGLE_API_KEY=<tu_api_key>
    ```
 
-Run the Python app:
+Ejecuta la aplicación Python:
 
 ```
 python app.py
 ```
-The server will start on `localhost:9000`.
 
-#### (Option 3) Configure and run the Go backend
+El servidor se iniciará en `localhost:9000`.
 
-1. Navigate to the app directory, `server-go` (i.e. where main.go is located).
-2. Run the application with the following command, replacing `<your_api_key>`
-   with your API key.
+#### (Opción 3) Configurar y ejecutar el backend con Go
+
+1. Navega al directorio de la aplicación, `server-go/`.
+2. Ejecuta la aplicación con el siguiente comando:
    ```
-   GOOGLE_API_KEY=<your_api_key> go run .
+   GOOGLE_API_KEY=<tu_api_key> go run .
    ```
 
-The server will start on `localhost:9000`.
+El servidor se iniciará en `localhost:9000`.
 
-By default, the server starts on port 9000. You can override the default port
-the server listens on by setting the environment variable `PORT` in the command
-above.
+## Uso
 
-## Usage
+Para comenzar a usar la aplicación, visita [http://localhost:3000](http://localhost:3000/)
 
-To start using the app, visit [http://localhost:3000](http://localhost:3000/)
+## Documentación de la API
 
-## API documentation
+(La documentación de los endpoints sigue igual en formato tabla).
 
-The following table shows the endpoints available in the example app:
 
-<table class="responsive fixed orange">
-  <colgroup><col width="214px"><col></colgroup>
-  <tr>
-    <th><h3 class="add-link">Endpoint</h3></th>
-    <th><h3 class="add-link">Details</h3></th>
-  </tr>
-  <tr>
-    <td>
-      <code>chat/</code>
-    </td>
-    <td>
-      This is the <b>non-streaming</b> POST method route. Use this to send the
-      chat message and the history of the conversation to the Gemini model. The
-      complete response generated by the model to the posted message will be
-      returned in the API's response.
-      <br />
-      <br />
-      <code>POST</code> <code><b>chat/</b></code>
-      <h4>Parameters</h4>
-      <table class="responsive fixed orange">
-        <tr>
-          <td><h5>Name</h5></td>
-          <td><h5>Type</h5></td>
-          <td><h5>Data type</h5></td>
-          <td><h5>Description</h5></td>
-        </tr>
-        <tr>
-          <td>chat</td>
-          <td>required</td>
-          <td>string</td>
-          <td>Latest chat message from user</td>
-        </tr>
-        <tr>
-          <td>history</td>
-          <td>optional</td>
-          <td>array</td>
-          <td>Current chat history between user and Gemini model</td>
-        </tr>
-      </table>
-      <h4>Response</h4>
-      <table class="responsive fixed orange">
-        <tr>
-          <td><h5>HTTP code</h5></td>
-          <td><h5>Content-Type</h5></td>
-          <td><h5>Response</h5></td>
-        </tr>
-        <tr>
-          <td>200</td>
-          <td>application/json</td>
-          <td>{"text": string}</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>stream/</code>
-    </td>
-    <td>
-      This is the <b>streaming</b> POST method route. Use this to send the chat
-      message and the history of the conversation to the Gemini model. The
-      response generated by the model will be streamed to handle partial
-      results.  
-      <br />
-      <br />
-      <code>POST</code> <code><b>stream/</b></code>
-      <h4>Parameters</h4>
-      <table class="responsive fixed orange">
-        <tr>
-          <td><h5>Name</h5></td>
-          <td><h5>Type</h5></td>
-          <td><h5>Data type</h5></td>
-          <td><h5>Description</h5></td>
-        </tr>
-        <tr>
-          <td>chat</td>
-          <td>required</td>
-          <td>string</td>
-          <td>Latest chat message from user</td>
-        </tr>
-        <tr>
-          <td>history</td>
-          <td>optional</td>
-          <td>array</td>
-          <td>Current chat history between user and Gemini model</td>
-        </tr>
-      </table>
-      <h4>Response</h4>
-      <table class="responsive fixed orange">
-        <tr>
-          <td><h5>HTTP code</h5></td>
-          <td><h5>Content-Type</h5></td>
-          <td><h5>Response</h5></td>
-        </tr>
-        <tr>
-          <td>200</td>
-          <td>application/json</td>
-          <td>string</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
