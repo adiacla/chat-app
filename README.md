@@ -25,11 +25,8 @@ En el modo sin streaming, se devuelve una respuesta después de que el modelo co
 
 El modo con streaming utiliza la capacidad de transmisión de la API de Gemini para lograr interacciones más rápidas.
 
-### Frontend
 
-El cliente de esta aplicación está desarrollado con [React](https://react.dev/) y se sirve utilizando [Vite](https://github.com/vitejs/vite).
-
-### Backend
+# Backend
 
 Existen tres implementaciones del servidor backend entre las cuales elegir:
 
@@ -42,11 +39,11 @@ Existen tres implementaciones del servidor backend entre las cuales elegir:
 
 Solo necesitas instalar y ejecutar *uno* de los backends. Si deseas probar más de uno, ten en cuenta que todos usan el mismo puerto por defecto.
 
-## Instalación
+## Instalación 
 
 Sigue las instrucciones de instalación para uno de los servidores backend (Node.js, Python o Go).
 
-### (Opción 1) Instalación con Node.js
+## Instalación de Node.js
 
 Para instalar Node.js y npm en Ubuntu 24.04, tienes varias opciones. A continuación, se detallan tres métodos comunes:
 
@@ -67,12 +64,15 @@ Verificar la instalación:
 node -v
 npm -v
 ```
+
+## Servidor  node.js 
+
 Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Node.js v18+ y npm en tu entorno de desarrollo.
 
 1. Navega al directorio de la aplicación, `server-js` (donde se encuentra `package.json`).
 2. Ejecuta `npm install`.
 
-### (Opción 2) Instalación con Python
+### (Opción 2* Recomenda para este curso) Instalación con Python
 
 Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Python 3.9+ en tu entorno de desarrollo. Luego, navega al directorio de la aplicación, `server-python`, y completa la instalación.
 
@@ -82,6 +82,8 @@ Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Pytho
 
 ```python
 python3 -m venv venv  #o solo python depende de la version instalada
+```
+```python
 source venv/bin/activate
 ```
 
@@ -93,6 +95,8 @@ python -m venv venv
 ```
 
 #### Instalar los paquetes requeridos
+
+Ingrese a la carpeta de server-python y allí ejecute la instalacion de los parquetes.
 
 ##### Linux/macOS/Windows
 
@@ -117,6 +121,11 @@ Para iniciar la aplicación:
 1. Ejecuta el cliente React.
 2. Ejecuta el servidor backend de tu elección.
 
+
+### Frontend
+
+El cliente de esta aplicación está desarrollado con [React](https://react.dev/) y se sirve utilizando [Vite](https://github.com/vitejs/vite).
+
 ### Ejecutar el cliente React
 
 1. Navega al directorio de la aplicación, `client-react/`.
@@ -127,6 +136,8 @@ Para iniciar la aplicación:
    ```
 
 El cliente se iniciará en `localhost:3000`.
+
+
 
 ### Ejecutar un servidor backend
 
