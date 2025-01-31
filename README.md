@@ -135,8 +135,14 @@ El cliente de esta aplicación está desarrollado con [React](https://react.dev/
 
 ### Ejecutar el cliente React
 
-1. Navega al directorio de la aplicación, `client-react/`.
-2. Ejecuta la aplicación con el siguiente comando:
+1. Inicia una nueva pantalla de terminal y navega al directorio del cliente de React (client-react):
+2. Navega al directorio de la aplicación, `client-react/`
+
+Instala las dependencias de la app de frontend:
+
+npm install
+
+3. Ejecuta la aplicación con el siguiente comando:
 
    ```
    npm run start
@@ -205,8 +211,20 @@ y lo ejecuta así:
 ```
 python app.py
 ```
+En segundo plano nohup python app.py > output.log 2>&1 &
+
 
 El servidor se iniciará en `localhost:9000`.
+
+Si desea probar con postman o curl debes hacer esto:
+en Body, row poner un json similar al que recibe la aplicación. Ejemplo
+
+
+{
+    "chat": "Hablame acerca del problema limitrofe ENTRE colombia Y NICARAGUA sobre las islas del archipielago de san andrés?",
+    "history": []
+}
+
 
 #### (Opción 3) Configurar y ejecutar el backend con Go
 
