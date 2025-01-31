@@ -25,6 +25,13 @@ En el modo sin streaming, se devuelve una respuesta después de que el modelo co
 
 El modo con streaming utiliza la capacidad de transmisión de la API de Gemini para lograr interacciones más rápidas.
 
+#Obtener una clave de API
+Necesitas una clave de API de Google Gemini para poder ejecutar el proyecto, que puedes obtener en la página de configuración de la API de Google Gemini.
+
+https://aistudio.google.com/apikey
+
+
+
 
 # Backend
 
