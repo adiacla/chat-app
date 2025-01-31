@@ -195,6 +195,13 @@ Configura la aplicación Python:
 
 Ejecuta la aplicación Python:
 
+Verifica si desea que ingresen desde maquinas externas a la red.
+Debes verificar que el puerto esta abierto 9000
+Además que en la linea de codigo el app run tengo 0.0.0.0 para definir que cualquier maquina puee ingresar.
+ app.run(host="0.0.0.0", port=int(os.getenv("PORT", 9000)))
+
+ 
+y lo ejecuta así:
 ```
 python app.py
 ```
