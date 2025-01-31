@@ -48,6 +48,26 @@ Sigue las instrucciones de instalación para uno de los servidores backend (Node
 
 ### (Opción 1) Instalación con Node.js
 
+Para instalar Node.js y npm en Ubuntu 24.04, tienes varias opciones. A continuación, se detallan tres métodos comunes:
+
+Método 1: Usar el Repositorio Predeterminado de Ubuntu
+
+Actualizar el índice de paquetes:
+```bash
+Copiar
+sudo apt update
+```
+Instalar Node.js y npm:
+```bash
+
+sudo apt install nodejs npm
+```
+Verificar la instalación:
+```bash
+
+node -v
+npm -v
+```
 Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Node.js v18+ y npm en tu entorno de desarrollo.
 
 1. Navega al directorio de la aplicación, `server-js` (donde se encuentra `package.json`).
@@ -61,8 +81,8 @@ Antes de ejecutar los pasos de instalación, asegúrate de tener instalado Pytho
 
 ##### Linux/macOS
 
-```
-python -m venv venv
+```python
+python3 -m venv venv  #o solo python depende de la version instalada
 source venv/bin/activate
 ```
 
