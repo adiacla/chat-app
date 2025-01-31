@@ -54,7 +54,6 @@ Método 1: Usar el Repositorio Predeterminado de Ubuntu
 
 Actualizar el índice de paquetes:
 ```bash
-Copiar
 sudo apt update
 ```
 Instalar Node.js y npm:
