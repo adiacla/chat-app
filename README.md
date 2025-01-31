@@ -144,11 +144,16 @@ npm install
 
 3. Ejecuta la aplicación con el siguiente comando:
 
-   ```
+Si desea solo local entonces:
+   ```bash
    npm run start
    ```
 
 El cliente se iniciará en `localhost:3000`.
+Si desea que ingrese remot
+   ```bash
+npm run dev -- --host
+   ```
 
 
 
